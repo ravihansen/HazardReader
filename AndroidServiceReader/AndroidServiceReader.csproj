@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21AB2017-8182-463B-B19A-89B25DD95B1C}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AndroidServiceReader</RootNamespace>
+    <AssemblyName>AndroidServiceReader</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <TargetFrameworkVersion>v2.2</TargetFrameworkVersion>
+    <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\HazardReaderCore\packages\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Business\HazardRegistrationReaderBL.cs">
+      <Link>Core\BL\HazardRegistrationReaderBL.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Business\HazardTypeReaderBL.cs">
+      <Link>Core\BL\HazardTypeReaderBL.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Business\IHazardTypeReaderBL.cs">
+      <Link>Core\BL\IHazardTypeReaderBL.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\DataAccess\ServiceReaderSAL.cs">
+      <Link>Core\DataAccess\ServiceReaderSAL.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Entities\HazardRegistration\Registration.cs">
+      <Link>Core\Entities\HazardRegistration\Registration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Entities\HazardTypes\AvalancheHazardType.cs">
+      <Link>Core\Entities\HazardTypes\AvalancheHazardType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Entities\HazardTypes\GeoHazardType.cs">
+      <Link>Core\Entities\HazardTypes\GeoHazardType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Entities\HazardTypes\IceHazardType.cs">
+      <Link>Core\Entities\HazardTypes\IceHazardType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Entities\HazardTypes\IHazardType.cs">
+      <Link>Core\Entities\HazardTypes\IHazardType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Entities\HazardTypes\MetaData.cs">
+      <Link>Core\Entities\HazardTypes\MetaData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\Entities\HazardTypes\SnowHazardType.cs">
+      <Link>Core\Entities\HazardTypes\SnowHazardType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\HazardReaderCore\HazardReaderCore\HazardType.cs">
+      <Link>Core\HazardType.cs</Link>
+    </Compile>
+    <Compile Include="Activities\AvalancheActivity.cs" />
+    <Compile Include="Activities\FloodActivity.cs" />
+    <Compile Include="Activities\IceActivity.cs" />
+    <Compile Include="Activities\LandslideActivity.cs" />
+    <Compile Include="Application\HazardTypesAL.cs" />
+    <Compile Include="AvalancheAdapter.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\Layout\AvalancheScreen.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CustomView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\layout1.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Layout\Main.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_tab_dirt_selected.png" />
+    <AndroidResource Include="Resources\drawable\ic_tab_dirt_unselected.png" />
+    <AndroidResource Include="Resources\drawable\ic_tab_is_selected.png" />
+    <AndroidResource Include="Resources\drawable\ic_tab_is_unselected.png" />
+    <AndroidResource Include="Resources\drawable\ic_tab_sno_selected.png" />
+    <AndroidResource Include="Resources\drawable\ic_tab_sno_unselected.png" />
+    <AndroidResource Include="Resources\drawable\ic_tab_vann_selected.png" />
+    <AndroidResource Include="Resources\drawable\ic_tab_vann_unselected.png" />
+    <AndroidResource Include="Resources\drawable\ic_tab_dirt.xml" />
+    <AndroidResource Include="Resources\drawable\ic_tab_is.xml" />
+    <AndroidResource Include="Resources\drawable\ic_tab_sno.xml" />
+    <AndroidResource Include="Resources\drawable\ic_tab_vann.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable\drawable-hdpi\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
