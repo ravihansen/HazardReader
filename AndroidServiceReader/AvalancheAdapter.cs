@@ -3,6 +3,8 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 using HazardReaderCore.Entities.HazardRegistration;
+using UrlImageViewHelper;
+using System.Drawing;
 
 namespace AndroidServiceReader
 {
@@ -36,16 +38,18 @@ namespace AndroidServiceReader
             View view = convertView; // re-use an existing view, if one is supplied
             if (view == null) // otherwise create a new one
             {
-                view = _context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2, null);
+                view = _context.LayoutInflater.Inflate(Android.Resource.Layout.ActivityListItem, null);
             }
 
             // set view properties to reflect data to the given row
             view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.RegistrationName;
-            view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = item.TypicalValue1;
+			view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.Icon);
             
             // return the view, populated with data for display
             return view;
         }
+
+
 
         public override int Count
         {

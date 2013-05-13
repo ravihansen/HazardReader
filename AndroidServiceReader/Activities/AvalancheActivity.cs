@@ -19,12 +19,20 @@ namespace AndroidServiceReader.Activities
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
+					
             HazardRegistrationReaderBL bl = new HazardRegistrationReaderBL();
+
+
+			var date = ServiceReader.DateDisplay;
+			if(date == DateTime.MinValue)
+			{
+				date = DateTime.Now.AddDays(-1);
+			}
+
 
             try
             {
-                _items = bl.GetHazardRegistrations(HazardRegistration.Avalanche);
+                _items = bl.GetHazardRegistrations(HazardRegistration.Avalanche, date);
             }
             catch (Exception e)
             {
@@ -42,7 +50,7 @@ namespace AndroidServiceReader.Activities
                 // TODO: Add error text
             }
 
-
+             
         }
 
         protected override void OnListItemClick(ListView l, View v, int position, long id)

@@ -2,4 +2,11 @@
 <resources>
     <string name="ApplicationName">AndroidServiceReader</string>
     <string name="app_name">AndroidServiceReader</string>
+    <string name="region_prompt">Choose a region</string>
+    <string-array name="region_array">
+        <item>Østlandet</item>
+        <item>Vestlandet</item>
+        <item>Nordland</item>
+        <item>Sørland</item>
+    </string-array>
 </resources>
